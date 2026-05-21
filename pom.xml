@@ -12,9 +12,6 @@
 
     <name>DragonTamer</name>
     <description>Dragon taming and battle plugin for Minecraft 1.12.2</description>
-    <authors>
-        <author>Alexey Sipachyov</author>
-    </authors>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -100,21 +97,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.3.0</version>
-            </plugin>
-            
-            <!-- Создание source JAR (опционально) -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>3.2.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
