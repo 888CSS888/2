@@ -1,0 +1,199 @@
+# ============================================================
+# DragonTamer v1.3.3 — Конфигурация
+# ============================================================
+
+# ============================================================
+# Сообщения
+# ============================================================
+messages:
+  prefix: "&8[&6DragonTamer&8] "
+  
+  # Основные сообщения
+  no-permission: "&cНедостаточно прав."
+  no-dragon: "&cУ вас нет активного дракона. Используйте яйцо дракона!"
+  invalid-world: "&cВ этом мире драконы недоступны."
+  dragon-follow: "&aВаш дракон следует за вами."
+  dragon-stay: "&eВаш дракон остался на месте."
+  dragon-farm: "&aВаш дракон принёс ресурсы!"
+  farm-cooldown: "&cФерма будет готова через {time} мин."
+  dragon-info: "&6=== Информация о Драконе ===\n&7Имя: &f{name}\n&7Тип: &f{type}\n&7Уровень: &a{level}\n&7Опыт: &e{exp}&7/&e{maxexp}\n&7Здоровье: &c{hp}&7/&c{maxhp}\n&7Режим: &b{mode}"
+  dragon-recovering: "&cВаш дракон восстанавливается ещё {time} мин."
+  top-header: "&6=== Топ Драконов ==="
+  top-entry: "&7{rank}. &f{name} &7({type}) — &aУр.{level}"
+  top-empty: "&7Топ пуст."
+  egg-used: "&aВы вылупили {type}! Ваш дракон появился."
+  dragon-moved-to-collection: "&7Ваш прошлый дракон перемещён в коллекцию."
+  dragon-named: "&aДракон ({type}) переименован в &f{name}&a."
+  dragon-name-cleared: "&eИмя дракона &f{old} &eудалено."
+  collection-full: "&cКоллекция полна! Максимум {max} драконов."
+  farm-to-chest: "&aРесурсы отправлены в сундук дракона!"
+  chest-overflow: "&cВаш сундук дракона полон! Ресурсы выпали на землю."
+  chest-opened: "&aОткрыт сундук дракона."
+  chest-title: "&8[&6Dragon Chest&8]"
+  
+  # Орбита и автоферма
+  orbit-enabled: "&bРежим орбиты включён."
+  orbit-disabled: "&7Режим орбиты выключен."
+  autofarm-enabled: "&aАвто-ферма включена (каждые {interval} мин)."
+  autofarm-disabled: "&7Авто-ферма выключена."
+  
+  # Охрана
+  guard-attacking: "&cВаш дракон атакует {mob}!"
+  
+  # Битва
+  battle-request-sent: "&6Вы вызвали {target} на битву! Ждём ответа 30 секунд."
+  battle-request-received: "&6{challenger} вызывает вас на битву! Используйте &e/dr accept &6или &e/dr reject"
+  battle-no-pending: "&cНет входящего вызова на битву."
+  battle-accepted: "&aБитва принята! Перемещаемся на арену..."
+  battle-rejected: "&c{target} отклонил ваш вызов на битву."
+  battle-rejected-self: "&eВы отклонили вызов на битву."
+  battle-arena-building: "&eСтроим арену битвы... Вас перемещают."
+  battle-intro: "&6✦ Драконы готовятся к бою! Битва начнётся через 10 секунд..."
+  battle-countdown: "&c{count}..."
+  battle-start: "&c⚔ БИТВА НАЧАТА! Ваши драконы атакуют!"
+  battle-won: "&a✔ Ваш дракон победил! +{exp} опыта, +{coins} монет."
+  battle-lost: "&c✘ Ваш дракон проиграл и восстанавливается {time} мин."
+  battle-watch-usage: "&cИспользование: /dr watch <игрок>"
+  battle-watch-not-found: "&cИгрок {target} не в активной битве."
+  battle-watch-already: "&cВы уже наблюдаете за битвой."
+  battle-watch-in-battle: "&cВы не можете наблюдать, пока участвуете в битве."
+  
+  # Уклонение
+  dodge-not-in-battle: "&cВы не в активной битве."
+  dodge-cooldown: "&cУклонение на перезарядке ещё {time}с."
+  dodge-used: "&bУклонение {dir}!"
+  
+  # Цели
+  target-no-dragon: "&cУ {target} нет дракона."
+
+# ============================================================
+# Арена битв
+# ============================================================
+arena:
+  world: "dragon_arena"
+  x: 0.5
+  y: 100.0
+  z: 0.5
+
+# ============================================================
+# Настройки битв
+# ============================================================
+battle:
+  arena-size: 75
+  arena-wall-height: 22
+  bleacher-rows: 3
+  arena-spacing: 300.0
+  max-concurrent-battles: 5
+  ai-tick-interval: 15
+  ai-cooldown-fire-cannon: 4000
+  ai-cooldown-fireball-fan: 8000
+  ai-cooldown-melee: 3000
+  melee-range: 18.0
+  melee-damage-percent: 0.10
+  dodge-cooldown-seconds: 5
+  dodge-strength: 1.6
+
+# Награды и восстановление
+battle-win-exp: 50
+battle-win-coins: 100
+recovery-time: 5
+
+# ============================================================
+# Типы драконов
+# ============================================================
+dragon-types:
+  FIRE:
+    display-name: "&c&lОгненный Дракон"
+    health: 120.0
+    damage: 12.0
+    color: "&c"
+    farm-resources:
+      - "BLAZE_ROD:1"
+      - "GUNPOWDER:2"
+      - "MAGMA_CREAM:1"
+  ICE:
+    display-name: "&b&lЛедяной Дракон"
+    health: 100.0
+    damage: 10.0
+    color: "&b"
+    farm-resources:
+      - "SNOWBALL:8"
+      - "ICE:2"
+      - "PACKED_ICE:1"
+  SHADOW:
+    display-name: "&8&lТеневой Дракон"
+    health: 90.0
+    damage: 15.0
+    color: "&8"
+    farm-resources:
+      - "ENDER_PEARL:1"
+      - "OBSIDIAN:1"
+      - "NETHER_STAR:0"  # Очень редкий ресурс (0 = не даёт)
+  EMERALD:
+    display-name: "&a&lИзумрудный Дракон"
+    health: 110.0
+    damage: 11.0
+    color: "&a"
+    farm-resources:
+      - "EMERALD:1"
+      - "GOLD_INGOT:2"
+      - "DIAMOND:0"      # Очень редкий
+
+# ============================================================
+# Характеристики роста
+# ============================================================
+health-per-level: 5.0
+damage-per-level: 1.0
+exp-per-level-base: 100
+max-dragons-per-player: 10
+dragon-name-max-length: 20
+
+# ============================================================
+# Уровни эволюции (суффикс к имени)
+# ============================================================
+evolution-levels:
+  10: "★"
+  25: "★★"
+  50: "★★★"
+  75: "★★★★"
+  100: "★★★★★"
+
+# ============================================================
+# Орбита
+# ============================================================
+orbit:
+  radius: 8.0
+  height-above-player: 6.0
+  speed: 0.05
+  particles: true
+
+# ============================================================
+# Охрана (Guard)
+# ============================================================
+guard:
+  radius: 16.0
+  damage-per-hit: 8.0
+  attack-cooldown-ticks: 20
+  particles: true
+
+# ============================================================
+# Ферма
+# ============================================================
+farm-interval: 60  # минут
+
+# ============================================================
+# Функции (включение/выключение)
+# ============================================================
+features:
+  orbit: true
+  guard: true
+  auto-farm: true
+  chest: true
+  chest-particles: true
+
+# ============================================================
+# Заблокированные миры (запрещают спавн дракона)
+# ============================================================
+blocked-worlds:
+  - "world_nether"
+  - "world_the_end"
