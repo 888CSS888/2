@@ -20,53 +20,33 @@
     </properties>
 
     <repositories>
-        <!-- Spigot API репозиторий -->
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
-        
-        <!-- PlaceholderAPI репозиторий (правильный URL) -->
-        <repository>
-            <id>placeholderapi</id>
-            <url>https://repo.extendedclip.com/releases/</url>
-        </repository>
     </repositories>
 
     <dependencies>
-        <!-- Spigot API для 1.12.2 -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.12.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-        
-        <!-- PlaceholderAPI - используем правильную версию -->
-        <dependency>
-            <groupId>me.clip</groupId>
-            <artifactId>placeholderapi</artifactId>
-            <version>2.10.9</version>
-            <scope>provided</scope>
-        </dependency>
     </dependencies>
 
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
-        
         <sourceDirectory>src/main/java</sourceDirectory>
-        
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
                 <filtering>false</filtering>
                 <includes>
                     <include>*.yml</include>
-                    <include>*.yaml</include>
                 </includes>
             </resource>
         </resources>
-        
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
